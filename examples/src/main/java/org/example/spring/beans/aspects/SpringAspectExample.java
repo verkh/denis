@@ -3,6 +3,7 @@ package org.example.spring.beans.aspects;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.example.spring.beans.BeanScopesExample;
+import org.example.spring.beans.MyLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ public class SpringAspectExample {
     @RequiredArgsConstructor
     public static class Container {
         private final ProfiledClass profiledClass;
+
         @PostConstruct
         void init() throws InterruptedException {
             profiledClass.wrapperDoSomething("My Message");
